@@ -1,0 +1,21 @@
+{% for message in messages %}
+    <div class="ui segment">
+        {{ 'mango_sylius.orderMessage.sender'|trans }} {{ message.sender.username }}
+        <br><br>
+        {% if message.sendMail %}
+            {{ 'mango_sylius.orderMessage.message'|trans }}
+        {% else %}
+            {{ 'mango_sylius.orderMessage.note'|trans }}
+        {% endif %}
+        <br>
+        {{ message.message }}
+        <br>
+        {% if message.sendMail %}
+            <br>
+            {{ 'mango_sylius.orderMessage.sent'|trans }}
+        {% endif %}
+        <br>
+        {{ 'mango_sylius.orderMessage.time'|trans }} {{ message.sendTime|date('Y-m-d H:i:s') }}</li>
+
+    </div>
+{% endfor %}

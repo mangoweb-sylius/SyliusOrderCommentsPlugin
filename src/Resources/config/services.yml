@@ -1,0 +1,29 @@
+services:
+  _defaults:
+    autowire: false
+    autoconfigure: false
+    public: false
+
+  mango_order_comments_plugin.form.type.order_message:
+    class: MangoSylius\OrderCommentsPlugin\Form\Type\OrderMessageType
+    arguments:
+      - MangoSylius\OrderCommentsPlugin\Entity\OrderMessage
+    tags:
+      - { name: form.type }
+
+  MangoSylius\OrderCommentsPlugin\Controller\OrderMessageController:
+    tags: ['controller.service_arguments']
+    arguments:
+      $router: '@router'
+      $flashBag: '@session.flash_bag'
+      $translator: '@translator'
+      $mailer: '@sylius.email_sender'
+      $entityManager: '@doctrine.orm.entity_manager'
+      $templatingEngine: '@templating'
+      $builder: '@form.factory'
+      $tokenStorage: '@security.token_storage'
+
+
+
+
+
