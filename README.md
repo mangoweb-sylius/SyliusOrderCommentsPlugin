@@ -6,17 +6,15 @@
 <h1 align="center">
 Order Comments Plugin
 <br />
-    <a href="https://packagist.org/packages/mangoweb-sylius/sylius-extended-channels" title="License" target="_blank">
-        <img src="https://img.shields.io/packagist/l/mangoweb-sylius/sylius-extended-channels.svg" />
+    <a href="https://packagist.org/packages/mangoweb-sylius/sylius-order-comments" title="License" target="_blank">
+        <img src="https://img.shields.io/packagist/l/mangoweb-sylius/sylius-order-comments.svg" />
     </a>
-    <a href="https://packagist.org/packages/mangoweb-sylius/sylius-extended-channels" title="Version" target="_blank">
-        <img src="https://img.shields.io/packagist/v/mangoweb-sylius/sylius-extended-channels.svg" />
+    <a href="https://packagist.org/packages/mangoweb-sylius/sylius-order-comments" title="Version" target="_blank">
+        <img src="https://img.shields.io/packagist/v/mangoweb-sylius/sylius-order-comments.svg" />
     </a>
-    <a href="http://travis-ci.org/mangoweb-sylius/SyliusExtendedChannelsPlugin" title="Build status" target="_blank">
-        <img src="https://img.shields.io/travis/mangoweb-sylius/SyliusExtendedChannelsPlugin/master.svg" />
+    <a href="http://travis-ci.org/mangoweb-sylius/SyliusOrderCommentsPlugin" title="Build status" target="_blank">
+        <img src="https://img.shields.io/travis/mangoweb-sylius/SyliusOrderCommentsPlugin/master.svg" />
     </a>
-    <br />
-    <img src="https://sylius.com/assets/badge-approved-by-sylius.png" alt="Approved by Sylius" width="120"/>
 </h1>
 
 ## Features
@@ -32,7 +30,7 @@ Order Comments Plugin
 
 1. Run `$ composer require mangoweb-sylius/sylius-order-comments`.
 2. Register `\MangoSylius\OrderCommentsPlugin\MangoSyliusOrderCommentsPlugin` in your Kernel.
-4. Import `@MangoSyliusExtendedChannelsPlugin/Resources/config/routing.yml` in the routing.yml.
+4. Import `@MangoSyliusOrderCommentsPlugin/Resources/config/routing.yml` in the routing.yml.
 
 ## Usage
 
