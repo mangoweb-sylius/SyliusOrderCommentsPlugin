@@ -1,5 +1,5 @@
 {
-    "name": "mangoweb-sylius/sylius-order-comments",
+    "name": "mangoweb-sylius/sylius-order-comments-plugin",
     "type": "sylius-plugin",
     "keywords": ["sylius", "sylius-plugin"],
     "description": "Order comments plugin for Sylius",
