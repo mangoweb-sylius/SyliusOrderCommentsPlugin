@@ -50,8 +50,9 @@ before_script:
 
 script:
   - composer validate --strict
+  - ls -la tests/Application/var/cache/test
   - bin/phpstan.sh
-  - bin/behat
+  - bin/behat.sh
   - bin/ecs.sh
 
 after_failure:

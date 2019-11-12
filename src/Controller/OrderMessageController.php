@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace MangoSylius\OrderCommentsPlugin\Controller;
 
-use Sylius\Component\Core\Model\Order;
-use MangoSylius\OrderCommentsPlugin\Entity\OrderMessage;
-use Sylius\Component\Core\Model\AdminUser;
-use MangoSylius\OrderCommentsPlugin\Form\Type\OrderMessageType;
 use Doctrine\ORM\EntityManagerInterface;
+use MangoSylius\OrderCommentsPlugin\Entity\OrderMessage;
+use MangoSylius\OrderCommentsPlugin\Form\Type\OrderMessageType;
+use Sylius\Component\Core\Model\AdminUser;
 use Sylius\Component\Core\Model\CustomerInterface;
+use Sylius\Component\Core\Model\Order;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Mailer\Sender\SenderInterface;
 use Symfony\Component\Form\FormFactoryInterface;
@@ -79,10 +79,9 @@ class OrderMessageController
                 $contact->setSendTime(new \DateTime());
                 $contact->setOrder($order);
 
-                assert ($token && $token->getUser() instanceof AdminUser);
+                assert($token && $token->getUser() instanceof AdminUser);
                 $sender = $token->getUser();
                 $contact->setSender($sender);
-
 
                 $this->entityManager->persist($contact);
                 $this->entityManager->flush();
