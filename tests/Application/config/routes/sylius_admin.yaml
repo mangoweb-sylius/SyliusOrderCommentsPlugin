@@ -1,3 +1,7 @@
 sylius_admin:
     resource: "@SyliusAdminBundle/Resources/config/routing.yml"
     prefix: /admin
+
+mango_order_comments_plugin:
+  resource: "@MangoSyliusOrderCommentsPlugin/Resources/config/routing.yml"
+  prefix: /admin

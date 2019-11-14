@@ -22,7 +22,7 @@ Feature: Send order message email to customer
   Scenario: Being able to send an order message email to Customer
     When I view the summary of the order "00000001"
     And I write a message
-    And I check "app_order_message_sendMail"
+    And I check "mango_sylius_order_message_sendMail"
     And I send the order message
     Then an email generated for order "00000001" should be sent to "sylius@mangoweb.cz"
     And I should be notified that the email was sent successfully
