@@ -14,7 +14,7 @@ use Webmozart\Assert\Assert;
 final class ManagingOrderMessageContext implements Context
 {
     /**
-     * @var ShowPageInterface
+     * @var \Tests\Behat\Pages\Admin\Order\ShowPageInterface
      */
     private $showPage;
     /**
@@ -58,6 +58,14 @@ final class ManagingOrderMessageContext implements Context
     public function anEmailGeneratedForOrderShouldBeSentTo(string $arg1, string $arg2): void
     {
         Assert::true($this->emailChecker->hasMessageTo('Message regarding your order No.' . $arg1, $arg2));
+    }
+
+    /**
+     * @Then The note generated should not be sent to :arg1
+     */
+    public function anEmailGeneratedForOrderShouldNotBeSentTo(string $arg1): void
+    {
+        Assert::false($this->emailChecker->hasRecipient($arg1));
     }
 
     /**

@@ -1,7 +1,9 @@
 mango_sylius:
     orderMessage:
         sendMail: 'Send to customer'
-        subject: 'Message regarding your order No.'
+        subject: 
+            order: 'Message regarding your order No.'
+            note: 'Create note on order No.'
         success: 
             mail: 'The message to the customer has been sent'
             note: 'The note has been save'

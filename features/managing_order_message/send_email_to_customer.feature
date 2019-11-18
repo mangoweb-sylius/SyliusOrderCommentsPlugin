@@ -18,7 +18,7 @@ Feature: Send order message email to customer
     And the customer chose "DHL" shipping method with "Cash on Delivery" payment
     And I am logged in as an administrator
 
-  @ui
+  @ui @email
   Scenario: Being able to send an order message email to Customer
     When I view the summary of the order "00000001"
     And I write a message

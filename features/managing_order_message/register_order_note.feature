@@ -18,10 +18,11 @@ Feature: Register order note
     And the customer chose "DHL" shipping method with "Cash on Delivery" payment
     And I am logged in as an administrator
 
-  @ui
+  @ui @email
   Scenario: Being able to send an order message email to Customer
     When I view the summary of the order "00000001"
     And I write a message
     And I send the order message
-    Then I should be notified that the note as been create
+    Then The note generated should not be sent to "sylius@mangoweb.cz"
+    And I should be notified that the note as been create
     And I see the note created

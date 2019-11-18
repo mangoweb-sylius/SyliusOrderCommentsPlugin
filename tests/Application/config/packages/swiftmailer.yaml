@@ -13,4 +13,7 @@ sylius_mailer:
     emails:
         order_mail:
             subject: 'Message regarding your order'
-            template: "OrderMessage/emailBody.html.twig"
+            template: "OrderMessage/orderEmailBody.html.twig"
+        note_mail:
+            subject: 'Create note on order'
+            template: "OrderMessage/noteEmailBody.html.twig"
