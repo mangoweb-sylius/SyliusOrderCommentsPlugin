@@ -1,0 +1,15 @@
+mango_sylius:
+    orderMessage:
+        sendMail: 'Send to customer'
+        subject: 
+            order: 'Message regarding your order No.'
+            note: 'Create note on order No.'
+        success: 
+            mail: 'The message to the customer has been sent'
+            note: 'The note has been save'
+        error: 'The message you tried to send has no content in it'
+        time: 'At'
+        sender: 'From :'
+        message: 'Message :'
+        note: 'Note :'
+        sent: 'Sent to customer'

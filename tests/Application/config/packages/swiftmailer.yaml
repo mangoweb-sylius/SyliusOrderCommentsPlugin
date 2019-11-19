@@ -1,0 +1,19 @@
+swiftmailer:
+    transport: '%env(SYLIUS_MAILER_TRANSPORT)%'
+    host: '%env(SYLIUS_MAILER_HOST)%'
+    username: '%env(SYLIUS_MAILER_USER)%'
+    password: '%env(SYLIUS_MAILER_PASSWORD)%'
+
+
+sylius_mailer:
+    sender:
+        name: '%env(SYLIUS_MAILER_SEND_FROM)%'
+        address: '%env(SYLIUS_MAILER_SEND_FROM)%'
+
+    emails:
+        order_mail:
+            subject: 'Message regarding your order'
+            template: "OrderMessage/orderEmailBody.html.twig"
+        note_mail:
+            subject: 'Create note on order'
+            template: "OrderMessage/noteEmailBody.html.twig"
