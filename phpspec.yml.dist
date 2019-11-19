@@ -1,4 +1,0 @@
-suites:
-    main:
-        namespace: MangoSylius\OrderCommentsPlugin
-        psr4_prefix: MangoSylius\OrderCommentsPlugin\
