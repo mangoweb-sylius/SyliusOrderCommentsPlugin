@@ -11,6 +11,7 @@ use Sylius\Component\Core\Model\AdminUser;
 use Sylius\Component\Core\Model\CustomerInterface;
 use Sylius\Component\Core\Model\Order;
 use Sylius\Component\Core\Model\OrderInterface;
+use Sylius\Component\Core\Repository\OrderRepositoryInterface;
 use Sylius\Component\Mailer\Sender\SenderInterface;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -30,6 +31,8 @@ class OrderMessageController
     private $templatingEngine;
     /** @var EntityManagerInterface */
     private $entityManager;
+    /** @var OrderRepositoryInterface */
+    private $orderRepository;
     /** @var SenderInterface */
     private $mailer;
     /** @var RouterInterface */
@@ -45,6 +48,7 @@ class OrderMessageController
         TranslatorInterface $translator,
         EngineInterface $templatingEngine,
         EntityManagerInterface $entityManager,
+        OrderRepositoryInterface $orderRepository,
         SenderInterface $mailer,
         RouterInterface $router,
         FlashBagInterface $flashBag,
@@ -54,6 +58,7 @@ class OrderMessageController
         $this->translator = $translator;
         $this->templatingEngine = $templatingEngine;
         $this->entityManager = $entityManager;
+        $this->orderRepository = $orderRepository;
         $this->mailer = $mailer;
         $this->router = $router;
         $this->flashBag = $flashBag;
@@ -73,7 +78,7 @@ class OrderMessageController
 
         if ($form->isSubmitted()) {
             if ($form->isValid()) {
-                $order = $this->entityManager->find(Order::class, $id);
+                $order = $this->orderRepository->find($id);
                 $token = $this->token->getToken();
                 $sendMail = $form['sendMail']->getData();
                 $contact->setSendTime(new \DateTime());
