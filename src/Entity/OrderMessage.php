@@ -11,7 +11,7 @@ use Sylius\Component\Resource\Model\ResourceInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity
+ * @ORM\MappedSuperclass
  * @ORM\Table(name="app_order_message")
  */
 class OrderMessage implements ResourceInterface
@@ -23,7 +23,7 @@ class OrderMessage implements ResourceInterface
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $id;
+    protected $id;
 
     /**
      * @ORM\Column(type="string", nullable=false)
@@ -31,33 +31,33 @@ class OrderMessage implements ResourceInterface
      * @var string|null
      * @Assert\NotBlank
      */
-    private $message;
+    protected $message;
 
     /**
      * @ORM\Column(type="datetime")
      *
      * @var \DateTime|null
      */
-    private $sendTime;
+    protected $sendTime;
 
     /**
      * @ORM\Column(type="boolean")
      *
      * @var bool
      */
-    private $sendMail = false;
+    protected $sendMail = false;
 
     /**
      * @var Order|null
      * @ORM\ManyToOne(targetEntity="Sylius\Component\Core\Model\Order")
      */
-    private $order;
+    protected $order;
 
     /**
      * @var AdminUser|null
      * @ORM\ManyToOne(targetEntity="Sylius\Component\Core\Model\AdminUser")
      */
-    private $sender;
+    protected $sender;
 
     /**
      * @return int

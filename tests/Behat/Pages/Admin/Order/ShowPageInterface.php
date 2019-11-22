@@ -12,7 +12,9 @@ interface ShowPageInterface extends SymfonyPageInterface
 
     public function addMessage(): void;
 
-    public function showMessage();
+    public function showMessage(): void;
 
-    public function checkOption($arg1);
+    public function checkOption($arg1): void;
+
+    public function uncheckOption($arg1): void;
 }

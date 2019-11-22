@@ -47,7 +47,7 @@ final class ManagingOrderMessageContext implements Context
     /**
      * @When I send the order message
      */
-    public function iResendTheOrderEmail(): void
+    public function iSendTheOrderEmail(): void
     {
         $this->showPage->sendOrderEmail();
     }
@@ -100,10 +100,18 @@ final class ManagingOrderMessageContext implements Context
     }
 
     /**
-     * @When I check :arg1
+     * @When I check the checkbox :arg1
      */
-    public function iCheck($arg1)
+    public function iCheckTheCheckbox($arg1)
     {
         $this->showPage->checkOption($arg1);
+    }
+
+    /**
+     * @When I uncheck the checkbox :arg1
+     */
+    public function iCheckTheCheckbox($arg1)
+    {
+        $this->showPage->uncheckOption($arg1);
     }
 }

@@ -37,6 +37,12 @@ final class ShowPage extends SymfonyPage implements ShowPageInterface
         $Page->find('css', '#' . $checkbox)->setValue(true);
     }
 
+    public function uncheckOption($checkbox): void
+    {
+        $Page = $this->getSession()->getPage();
+        $Page->find('css', '#' . $checkbox)->setValue(false);
+    }
+
     protected function getDefinedElements(): array
     {
         return array_merge(parent::getDefinedElements(), [

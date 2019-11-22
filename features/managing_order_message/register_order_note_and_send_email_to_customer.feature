@@ -1,6 +1,6 @@
 @order_message
-Feature: Send order message email to customer
-  In order to send an email to the customer who create the order
+Feature: Register order note
+  In order to register a note and send a email to the customer on the order detail page
   As an Administrator
   I want to have an appropriate form on Order view in menu
 
@@ -22,7 +22,16 @@ Feature: Send order message email to customer
   Scenario: Being able to send an order message email to Customer
     When I view the summary of the order "00000001"
     And I write a message
-    And I check "mango_sylius_order_message_sendMail"
+    And I send the order message
+    Then The note generated should not be sent to "sylius@mangoweb.cz"
+    And I should be notified that the note as been create
+    And I see the note created
+
+  @ui @email
+  Scenario: Being able to send an order message email to Customer
+    When I view the summary of the order "00000001"
+    And I write a message
+    And I check the checkbox "mango_sylius_order_message_sendMail"
     And I send the order message
     Then an email generated for order "00000001" should be sent to "sylius@mangoweb.cz"
     And I should be notified that the email was sent successfully
