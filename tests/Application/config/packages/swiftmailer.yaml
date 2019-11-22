@@ -5,11 +5,6 @@ swiftmailer:
     password: '%env(SYLIUS_MAILER_PASSWORD)%'
 
 
-sylius_mailer:
-    sender:
-        name: '%env(SYLIUS_MAILER_SEND_FROM)%'
-        address: '%env(SYLIUS_MAILER_SEND_FROM)%'
-
     emails:
         order_mail:
             subject: 'Message regarding your order'
