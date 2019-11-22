@@ -1,5 +1,5 @@
 @order_message
-Feature: Register order note
+Feature: Save order note and send order email
   In order to register a note and send a email to the customer on the order detail page
   As an Administrator
   I want to have an appropriate form on Order view in menu
@@ -13,7 +13,7 @@ Feature: Register order note
     And the store allows paying with "Cash on Delivery"
     And there is a customer "sylius@mangoweb.cz" that placed an order "#00000001"
     And the customer bought 10 "Screwdriver" products
-    And the customer "Mango Web" addressed it to "Street", "12345" "Los Angeles" in the "United States"
+    And the customer "manGoweb" addressed it to "Street", "12345" "Los Angeles" in the "United States"
     And for the billing address of "Mango Web" in the "Street", "12345" "Los Angeles", "United States"
     And the customer chose "DHL" shipping method with "Cash on Delivery" payment
     And I am logged in as an administrator
@@ -22,9 +22,9 @@ Feature: Register order note
   Scenario: Being able to send an order message email to Customer
     When I view the summary of the order "00000001"
     And I write a message
-    And I send the order message
-    Then The note generated should not be sent to "sylius@mangoweb.cz"
-    And I should be notified that the note as been create
+    And I save the order message
+    Then the note generated should not be sent to "sylius@mangoweb.cz"
+    And I should be notified that the note as been created
     And I see the note created
 
   @ui @email

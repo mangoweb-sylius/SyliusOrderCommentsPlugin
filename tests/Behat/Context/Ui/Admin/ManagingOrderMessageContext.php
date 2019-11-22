@@ -46,6 +46,7 @@ final class ManagingOrderMessageContext implements Context
 
     /**
      * @When I send the order message
+     * @When I save the order message
      */
     public function iSendTheOrderEmail(): void
     {
@@ -61,7 +62,7 @@ final class ManagingOrderMessageContext implements Context
     }
 
     /**
-     * @Then The note generated should not be sent to :arg1
+     * @Then the note generated should not be sent to :arg1
      */
     public function anEmailGeneratedForOrderShouldNotBeSentTo(string $arg1): void
     {
@@ -80,9 +81,9 @@ final class ManagingOrderMessageContext implements Context
     }
 
     /**
-     * @Then I should be notified that the note as been create
+     * @Then I should be notified that the note as been created
      */
-    public function iShouldBeNotifiedThatTheNoteAsBeenCreate()
+    public function iShouldBeNotifiedThatTheNoteAsBeenCreated()
     {
         $this->notificationChecker->checkNotification(
             'The note has been save',
@@ -110,7 +111,7 @@ final class ManagingOrderMessageContext implements Context
     /**
      * @When I uncheck the checkbox :arg1
      */
-    public function iCheckTheCheckbox($arg1)
+    public function iUncheckTheCheckbox($arg1)
     {
         $this->showPage->uncheckOption($arg1);
     }

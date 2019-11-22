@@ -1,5 +1,6 @@
 mango_sylius:
     orderMessage:
+        title: 'Comment order'
         sendMail: 'Send to customer'
         subject: 
             order: 'Message regarding your order No.'
@@ -9,7 +10,7 @@ mango_sylius:
             note: 'The note has been save'
         error: 'The message you tried to send has no content in it'
         time: 'At'
-        sender: 'From :'
-        message: 'Message :'
-        note: 'Note :'
+        sender: 'From:'
+        message: 'Message:'
+        note: 'Note:'
         sent: 'Sent to customer'

@@ -5,13 +5,6 @@ sylius_resource:
         model: MangoSylius\OrderCommentsPlugin\Entity\OrderMessage
         form: MangoSylius\OrderCommentsPlugin\Form\Type\OrderMessageType
 
-swiftmailer:
-  transport: '%env(SYLIUS_MAILER_TRANSPORT)%'
-  host: '%env(SYLIUS_MAILER_HOST)%'
-  username: '%env(SYLIUS_MAILER_USER)%'
-  password: '%env(SYLIUS_MAILER_PASSWORD)%'
-
-
 sylius_mailer:
   sender:
     name: '%env(SYLIUS_MAILER_SEND_FROM)%'
