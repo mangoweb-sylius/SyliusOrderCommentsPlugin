@@ -1,10 +1,10 @@
 {% block subject %}
-    {{ 'mango_sylius.orderMessage.subject.order'|trans({'%orderNumber%': contact.order.number}, "workend") }}
+    {{ 'mango_sylius.orderMessage.subject.order'|trans{'%orderNumber%': contact.order.number} }}
 {% endblock %}
 
 {% block body %}
     {% autoescape %}
-        {{ 'mango_sylius.orderMessage.subject.order'|trans({'%orderNumbere%': contact.order.number}, "workend") }}
+        {{ 'mango_sylius.orderMessage.subject.order'|trans{'%orderNumbere%': contact.order.number} }}
         <br><br>
         {{ contact.message}}
     {% endautoescape %}
