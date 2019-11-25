@@ -23,7 +23,7 @@ class OrderMessage implements ResourceInterface
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    protected $id;
+    private $id;
 
     /**
      * @ORM\Column(type="string", nullable=false)
