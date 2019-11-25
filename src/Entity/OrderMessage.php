@@ -49,7 +49,7 @@ class OrderMessage implements ResourceInterface
 
     /**
      * @var OrderInterface|null
-     * @ORM\ManyToOne(targetEntity="Sylius\Component\Core\Model\OrderInterface")
+     * @ORM\ManyToOne(targetEntity="Sylius\Component\Core\Model\Order")
      */
     protected $order;
 
