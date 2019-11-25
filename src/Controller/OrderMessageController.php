@@ -9,7 +9,6 @@ use MangoSylius\OrderCommentsPlugin\Entity\OrderMessage;
 use MangoSylius\OrderCommentsPlugin\Form\Type\OrderMessageType;
 use Sylius\Component\Core\Model\AdminUser;
 use Sylius\Component\Core\Model\CustomerInterface;
-use Sylius\Component\Core\Model\Order;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Repository\OrderRepositoryInterface;
 use Sylius\Component\Mailer\Sender\SenderInterface;
@@ -82,6 +81,7 @@ class OrderMessageController
                 $token = $this->token->getToken();
                 $sendMail = $form['sendMail']->getData();
                 $contact->setSendTime(new \DateTime());
+                assert($order instanceof OrderInterface);
                 $contact->setOrder($order);
 
                 assert($token && $token->getUser() instanceof AdminUser);
@@ -90,7 +90,6 @@ class OrderMessageController
 
                 $this->entityManager->persist($contact);
                 $this->entityManager->flush();
-                assert($order instanceof OrderInterface);
                 $customer = $order->getCustomer();
                 if ($sendMail === true) {
                     assert($customer instanceof CustomerInterface);
@@ -115,6 +114,7 @@ class OrderMessageController
     public function showAction(int $id)
     {
         $orderMessage = $this->entityManager->getRepository(OrderMessage::class)->findBy(['order' => $id]);
+
         return new Response($this->templatingEngine->render('OrderMessage/show.html.twig', [
             'messages' => $orderMessage,
         ]));

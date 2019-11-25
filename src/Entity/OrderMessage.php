@@ -6,7 +6,7 @@ namespace MangoSylius\OrderCommentsPlugin\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Sylius\Component\Core\Model\AdminUser;
-use Sylius\Component\Core\Model\Order;
+use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Resource\Model\ResourceInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -48,8 +48,8 @@ class OrderMessage implements ResourceInterface
     protected $sendMail = false;
 
     /**
-     * @var Order|null
-     * @ORM\ManyToOne(targetEntity="Sylius\Component\Core\Model\Order")
+     * @var OrderInterface|null
+     * @ORM\ManyToOne(targetEntity="Sylius\Component\Core\Model\OrderInterface")
      */
     protected $order;
 
@@ -124,22 +124,6 @@ class OrderMessage implements ResourceInterface
     }
 
     /**
-     * @return Order|null
-     */
-    public function getOrder(): ?Order
-    {
-        return $this->order;
-    }
-
-    /**
-     * @param Order|null $order
-     */
-    public function setOrder(?Order $order): void
-    {
-        $this->order = $order;
-    }
-
-    /**
      * @return AdminUser|null
      */
     public function getSender(): ?AdminUser
@@ -155,5 +139,19 @@ class OrderMessage implements ResourceInterface
         $this->sender = $sender;
     }
 
+    /**
+     * @return OrderInterface|null
+     */
+    public function getOrder(): ?OrderInterface
+    {
+        return $this->order;
+    }
 
+    /**
+     * @param OrderInterface|null $order
+     */
+    public function setOrder(?OrderInterface $order): void
+    {
+        $this->order = $order;
+    }
 }
