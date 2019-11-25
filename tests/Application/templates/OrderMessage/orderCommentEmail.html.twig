@@ -1,4 +1,4 @@
-{% block orderCommentEmail %}
+{% block subject %}
     {{ 'mango_sylius.orderMessage.subject.order'|trans }}{{ contact.order.number }}
 {% endblock %}
 
@@ -9,3 +9,4 @@
         {{ contact.message}}
     {% endautoescape %}
 {% endblock %}
+

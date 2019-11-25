@@ -22,6 +22,7 @@ services:
       $templatingEngine: '@templating'
       $builder: '@form.factory'
       $tokenStorage: '@security.token_storage'
+      $orderRepository: '@sylius.repository.order'
 
 
 

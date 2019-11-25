@@ -4,11 +4,3 @@ swiftmailer:
     username: '%env(SYLIUS_MAILER_USER)%'
     password: '%env(SYLIUS_MAILER_PASSWORD)%'
 
-
-    emails:
-        order_mail:
-            subject: 'Message regarding your order'
-            template: "OrderMessage/orderEmailBody.html.twig"
-        note_mail:
-            subject: 'Create note on order'
-            template: "OrderMessage/noteEmailBody.html.twig"

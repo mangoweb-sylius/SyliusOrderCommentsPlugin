@@ -115,7 +115,6 @@ class OrderMessageController
     public function showAction(int $id)
     {
         $orderMessage = $this->entityManager->getRepository(OrderMessage::class)->findBy(['order' => $id]);
-
         return new Response($this->templatingEngine->render('OrderMessage/show.html.twig', [
             'messages' => $orderMessage,
         ]));

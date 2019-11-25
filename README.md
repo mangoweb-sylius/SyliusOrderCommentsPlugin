@@ -31,7 +31,7 @@ Order Comments Plugin
 1. Run `$ composer require mangoweb-sylius/sylius-order-comments-plugin`.
 2. Register `\MangoSylius\OrderCommentsPlugin\MangoSyliusOrderCommentsPlugin` in your Kernel.
 3. Import `@MangoSyliusOrderCommentsPlugin/Resources/config/routing.yml` in the routing.yml.
-4. Import '@MangoSyliusOrderCommentsPlugin/Resources/config/mailer.yaml' and '@MangoSyliusOrderCommentsPlugin/Resources/config/resource.yaml' in _sylius.yml.
+4. Import `@MangoSyliusOrderCommentsPlugin/Resources/config/mailer.yml` and `@MangoSyliusOrderCommentsPlugin/Resources/config/resources.yml` in _sylius.yml.
 
 ## Development
 
