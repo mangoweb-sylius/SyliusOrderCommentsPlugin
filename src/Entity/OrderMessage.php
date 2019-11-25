@@ -17,8 +17,10 @@ use Symfony\Component\Validator\Constraints as Assert;
 class OrderMessage implements ResourceInterface
 {
     /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
-     * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
@@ -106,6 +108,22 @@ class OrderMessage implements ResourceInterface
     }
 
     /**
+     * @return bool
+     */
+    public function isSendMail(): bool
+    {
+        return $this->sendMail;
+    }
+
+    /**
+     * @param bool $sendMail
+     */
+    public function setSendMail(bool $sendMail): void
+    {
+        $this->sendMail = $sendMail;
+    }
+
+    /**
      * @return Order|null
      */
     public function getOrder(): ?Order
@@ -137,19 +155,5 @@ class OrderMessage implements ResourceInterface
         $this->sender = $sender;
     }
 
-    /**
-     * @return bool
-     */
-    public function isSendMail(): bool
-    {
-        return $this->sendMail;
-    }
 
-    /**
-     * @param bool $sendMail
-     */
-    public function setSendMail(bool $sendMail): void
-    {
-        $this->sendMail = $sendMail;
-    }
 }
