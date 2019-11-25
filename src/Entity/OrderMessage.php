@@ -17,10 +17,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 class OrderMessage implements ResourceInterface
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
+     * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
