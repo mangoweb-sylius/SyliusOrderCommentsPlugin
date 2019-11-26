@@ -33,6 +33,15 @@ Order Comments Plugin
 3. Import `@MangoSyliusOrderCommentsPlugin/Resources/config/routing.yml` in the routing.yml.
 4. Import `@MangoSyliusOrderCommentsPlugin/Resources/config/mailer.yml` and `@MangoSyliusOrderCommentsPlugin/Resources/config/resources.yml` in _sylius.yml.
 
+## Usage
+
+* Log into admin panel
+* Click on `Orders` in the `Sales` section in main menu
+* Select the order you want to check
+* Write your note or email content into the `OrderMessage` panel
+* Check the `Send email` option if you want to send an email to the customer
+* Click `Send` button below
+
 ## Development
 
 ### Usage
