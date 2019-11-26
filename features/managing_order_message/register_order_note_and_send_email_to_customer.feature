@@ -2,7 +2,7 @@
 Feature: Save order note
   In order to register a note and send a email to the customer on the order detail page
   As an Administrator
-  I want to have an appropriate form on Order detail page
+  I want to have an appropriate form on the order detail page
 
   Background:
     Given the store operates on a single channel in "United States"
