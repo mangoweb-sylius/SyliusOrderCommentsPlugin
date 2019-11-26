@@ -39,7 +39,7 @@ Order Comments Plugin
 * Click on `Orders` in the `Sales` section in main menu
 * Select the order you want to check
 * Write your note or email content into the `OrderMessage` panel
-* Check the `Send email` option if you want to send an email to the customer
+* Check the `Send to customer` option if you want to send an email to the customer
 * Click `Send` button below
 
 ## Development
