@@ -105,7 +105,7 @@ class OrderMessageController
             return new RedirectResponse($this->router->generate('sylius_admin_order_show', ['id' => $id]));
         }
 
-        return new Response($this->templatingEngine->render('OrderMessage/Form/_form.html.twig', [
+        return new Response($this->templatingEngine->render('@MangoSyliusOrderCommentsPlugin/OrderMessage/Form/_form.html.twig', [
             'form' => $form->createView(),
         ]));
     }
@@ -114,7 +114,7 @@ class OrderMessageController
     {
         $orderMessage = $this->entityManager->getRepository(OrderMessage::class)->findBy(['order' => $id]);
 
-        return new Response($this->templatingEngine->render('OrderMessage/show.html.twig', [
+        return new Response($this->templatingEngine->render('@MangoSyliusOrderCommentsPlugin/OrderMessage/show.html.twig', [
             'messages' => $orderMessage,
         ]));
     }
