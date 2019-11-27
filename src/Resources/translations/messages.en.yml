@@ -2,9 +2,7 @@ mango_sylius:
     orderMessage:
         title: 'Comment order'
         sendMail: 'Send to customer'
-        subject: 
-            order: 'Message regarding your order No.'
-            note: 'Create note on order No.'
+        subject: 'Message regarding your order No.'
         success: 
             mail: 'The message to the customer has been sent'
             note: 'The note has been save'

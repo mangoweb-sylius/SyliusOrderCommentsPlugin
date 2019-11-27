@@ -3,6 +3,4 @@ sylius_mailer:
     order_mail:
       subject: 'Message regarding your order'
       template: "OrderMessage/orderCommentEmail.html.twig"
-    note_mail:
-      subject: 'Create note on order'
-      template: "OrderMessage/orderCommentNote.html.twig"
+

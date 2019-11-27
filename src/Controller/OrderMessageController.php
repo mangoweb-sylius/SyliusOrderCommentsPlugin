@@ -96,7 +96,6 @@ class OrderMessageController
                     $this->mailer->send('order_mail', [$customer->getEmail()], ['contact' => $contact]);
                     $this->flashBag->add('success', $this->translator->trans('mango_sylius.orderMessage.success.mail'));
                 } else {
-                    $this->mailer->send('note_mail', [$sender->getEmail()], ['contact' => $contact]);
                     $this->flashBag->add('success', $this->translator->trans('mango_sylius.orderMessage.success.note'));
                 }
             } else {

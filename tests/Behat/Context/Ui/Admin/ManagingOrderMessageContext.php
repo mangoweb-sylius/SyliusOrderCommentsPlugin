@@ -8,6 +8,7 @@ use Behat\Behat\Context\Context;
 use Sylius\Behat\NotificationType;
 use Sylius\Behat\Service\NotificationCheckerInterface;
 use Sylius\Component\Core\Test\Services\EmailCheckerInterface;
+use Symfony\Component\Finder\Finder;
 use Tests\MangoSylius\OrderCommentsPlugin\Behat\Pages\Admin\Order\ShowPageInterface;
 use Webmozart\Assert\Assert;
 
@@ -66,7 +67,10 @@ final class ManagingOrderMessageContext implements Context
      */
     public function anEmailGeneratedForOrderShouldNotBeSentTo(string $arg1): void
     {
-        Assert::false($this->emailChecker->hasRecipient($arg1));
+        $mailD = $this->emailChecker->getSpoolDirectory();
+        $finder = new Finder();
+        $finder->files()->name('*.message')->in($mailD);
+        Assert::eq($finder->count(), 0, sprintf('message files found in %s.', $mailD));
     }
 
     /**
@@ -115,4 +119,5 @@ final class ManagingOrderMessageContext implements Context
     {
         $this->showPage->uncheckOption($arg1);
     }
+
 }
