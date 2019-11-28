@@ -23,7 +23,7 @@ Order Comments Plugin
 * Send personalized email to the addressee of the order
 
 <p align="center">
-	<img src="https://raw.githubusercontent.com/mangoweb-sylius/SyliusOrderCommentsPlugin/master/doc/CreateEmailsAndNotes.png"/>
+	<img src="https://raw.githubusercontent.com/mangoweb-sylius/SyliusOrderCommentsPlugin/master/doc/CreateEmailsAndNotes.PNG"/>
 </p>
 
 ## Installation
