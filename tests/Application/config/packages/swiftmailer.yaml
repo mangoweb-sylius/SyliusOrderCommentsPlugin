@@ -1,0 +1,6 @@
+swiftmailer:
+    transport: '%env(SYLIUS_MAILER_TRANSPORT)%'
+    host: '%env(SYLIUS_MAILER_HOST)%'
+    username: '%env(SYLIUS_MAILER_USER)%'
+    password: '%env(SYLIUS_MAILER_PASSWORD)%'
+

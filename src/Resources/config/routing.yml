@@ -1,0 +1,6 @@
+mango_sylius_admin_order_message_send:
+  path: ordermessage/{id}/send
+  methods: [POST]
+  defaults:
+    _controller: MangoSylius\OrderCommentsPlugin\Controller\OrderMessageController:contactAction
+

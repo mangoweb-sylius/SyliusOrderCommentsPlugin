@@ -1,0 +1,12 @@
+{% block subject %}
+    {{ 'mango_sylius.orderMessage.subject'|trans({'%orderNumber%': contact.order.number}) }}
+{% endblock %}
+
+{% block body %}
+    {% autoescape %}
+        {{ 'mango_sylius.orderMessage.subject'|trans({'%orderNumber%': contact.order.number}) }}
+        <br><br>
+        {{ contact.message}}
+    {% endautoescape %}
+{% endblock %}
+
