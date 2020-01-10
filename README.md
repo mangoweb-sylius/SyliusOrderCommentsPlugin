@@ -29,9 +29,57 @@ Order Comments Plugin
 ## Installation
 
 1. Run `$ composer require mangoweb-sylius/sylius-order-comments-plugin`.
-2. Register `\MangoSylius\OrderCommentsPlugin\MangoSyliusOrderCommentsPlugin` in your Kernel.
-3. Import `@MangoSyliusOrderCommentsPlugin/Resources/config/routing.yml` in the routing.yml.
-4. Import `@MangoSyliusOrderCommentsPlugin/Resources/config/mailer.yml` and `@MangoSyliusOrderCommentsPlugin/Resources/config/resources.yml` in _sylius.yml.
+
+2. Add plugin classes to your `config/bundles.php`:
+ 
+   ```php
+   return [
+      ...
+      MangoSylius\OrderCommentsPlugin\MangoSyliusOrderCommentsPlugin::class => ['all' => true],
+   ];
+   ```
+  
+3. Add resource to `config/packages/_sylius.yaml`
+
+    ```yaml
+    imports:
+         ...
+         - { resource: "@MangoSyliusOrderCommentsPlugin/Resources/config/mailer.yml" }
+    ```
+   
+4. Add routing to `config/_routes.yaml`
+
+    ```yaml
+    mango_sylius_order_comments_plugin:
+      resource: "@MangoSyliusOrderCommentsPlugin/Resources/config/routing.yml"
+      prefix: /admin
+    ```
+5. Override the template in SyliusAdminBundle:Order:Show:_notes.html.twig
+
+   ```twig
+   {% if order.notes is not null %}
+       <h4 class="ui top attached styled header">
+           {{ 'sylius.ui.notes'|trans }}
+       </h4>
+       <div class="ui attached segment" id="sylius-order-notes">
+           {{ order.notes }}
+       </div>
+   {% endif %}
+   
+   <div class="ui segment">
+       {{ render(controller(
+           'MangoSylius\\OrderCommentsPlugin\\Controller\\OrderMessageController::contactAction', {id: order.id}
+       )) }}
+   </div>
+   
+   {{ render(controller(
+       'MangoSylius\\OrderCommentsPlugin\\Controller\\OrderMessageController::showAction', {id: order.id}
+   )) }}
+    ```
+
+6. Create and run doctrine database migrations.
+
+For the guide how to use your own entity see [Sylius docs - Customizing Models](https://docs.sylius.com/en/1.6/customization/model.html)
 
 ## Usage
 

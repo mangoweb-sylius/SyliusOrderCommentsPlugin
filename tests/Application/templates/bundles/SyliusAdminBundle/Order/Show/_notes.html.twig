@@ -1,0 +1,18 @@
+{% if order.notes is not null %}
+    <h4 class="ui top attached styled header">
+        {{ 'sylius.ui.notes'|trans }}
+    </h4>
+    <div class="ui attached segment" id="sylius-order-notes">
+        {{ order.notes }}
+    </div>
+{% endif %}
+
+<div class="ui segment">
+    {{ render(controller(
+        'MangoSylius\\OrderCommentsPlugin\\Controller\\OrderMessageController::contactAction', {id: order.id}
+    )) }}
+</div>
+
+{{ render(controller(
+    'MangoSylius\\OrderCommentsPlugin\\Controller\\OrderMessageController::showAction', {id: order.id}
+)) }}
