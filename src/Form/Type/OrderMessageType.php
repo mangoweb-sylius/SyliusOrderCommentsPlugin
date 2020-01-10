@@ -28,7 +28,7 @@ class OrderMessageType extends AbstractResourceType
                 'value' => 0,
             ])
             ->add('sendMessage', SubmitType::class, [
-                'label' => 'send',
+                'label' => 'mango_sylius.orderMessage.sendComment',
             ]);
     }
 

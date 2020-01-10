@@ -12,3 +12,4 @@ mango_sylius:
         message: 'Message:'
         note: 'Note:'
         sent: 'Sent to customer'
+        sendComment: 'Send Comment'
