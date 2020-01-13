@@ -44,7 +44,7 @@ Order Comments Plugin
     ```yaml
     imports:
          ...
-         - { resource: "@MangoSyliusOrderCommentsPlugin/Resources/config/mailer.yml" }
+         - { resource: "@MangoSyliusOrderCommentsPlugin/Resources/config/config.yml" }
     ```
    
 4. Add routing to `config/_routes.yaml`
