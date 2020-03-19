@@ -1,0 +1,5 @@
+sylius_mailer:
+    emails:
+        order_mail:
+            subject: 'Message regarding your order'
+            template: "@MangoSyliusOrderCommentsPlugin/Admin/Email/orderCommentEmail.html.twig"

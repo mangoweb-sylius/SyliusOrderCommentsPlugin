@@ -1,0 +1,6 @@
+sylius_resource:
+    resources:
+        mango_order_comments_plugin.order_message:
+            classes:
+                model: MangoSylius\OrderCommentsPlugin\Entity\OrderMessage
+                form: MangoSylius\OrderCommentsPlugin\Form\Type\OrderMessageType

@@ -1,0 +1,9 @@
+<div class="ui segment">
+	{{ render(controller(
+		'MangoSylius\\OrderCommentsPlugin\\Controller\\OrderMessageController::save', {orderId: order.id}
+	)) }}
+</div>
+
+{{ render(controller(
+	'MangoSylius\\OrderCommentsPlugin\\Controller\\OrderMessageController::show', {orderId: order.id}
+)) }}
