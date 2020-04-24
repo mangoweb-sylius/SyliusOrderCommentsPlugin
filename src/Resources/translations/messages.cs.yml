@@ -1,0 +1,15 @@
+mango_sylius:
+    orderMessage:
+        title: 'Poznámka k objednávce'
+        sendMail: 'Zaslat zákazníkovi'
+        subject: 'Zpráva k vaší objednávce číslo %orderNumber%'
+        success:
+            mail: 'Zpráva byla zaslána zákazníkovi'
+            note: 'Zpráva byla uložena'
+        error: 'Zpráva, kterou se pokoušíte odeslat, je prázdná'
+        time: 'V'
+        sender: 'Od:'
+        message: 'Zpráva:'
+        note: 'Poznámka:'
+        sent: 'Odesláno zákazníkovi'
+        save: 'Uložit'

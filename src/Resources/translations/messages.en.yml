@@ -5,7 +5,7 @@ mango_sylius:
         subject: 'Message regarding your order No.%orderNumber%'
         success:
             mail: 'The message to the customer has been sent'
-            note: 'The note has been save'
+            note: 'The message has been saved'
         error: 'The message you tried to send has no content in it'
         time: 'At'
         sender: 'From:'
