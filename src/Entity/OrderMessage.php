@@ -48,13 +48,13 @@ class OrderMessage implements OrderMessageInterface
 
     /**
      * @var OrderInterface|null
-     * @ORM\ManyToOne(targetEntity="Sylius\Component\Core\Model\Order")
+     * @ORM\ManyToOne(targetEntity="Sylius\Component\Order\Model\OrderInterface")
      */
     protected $order;
 
     /**
      * @var AdminUserInterface|null
-     * @ORM\ManyToOne(targetEntity="Sylius\Component\Core\Model\AdminUser")
+     * @ORM\ManyToOne(targetEntity="Sylius\Component\Core\Model\AdminUserInterface")
      */
     protected $sender;
 
