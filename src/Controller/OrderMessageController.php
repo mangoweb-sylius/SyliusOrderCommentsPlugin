@@ -19,16 +19,16 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
-use Symfony\Component\Templating\EngineInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
+use Twig\Environment;
 
 class OrderMessageController
 {
     /** @var TranslatorInterface */
     private $translator;
 
-    /** @var EngineInterface */
-    private $templatingEngine;
+	/** @var Environment */
+	private $twig;
 
     /** @var OrderRepositoryInterface */
     private $orderRepository;
@@ -54,7 +54,7 @@ class OrderMessageController
 
     public function __construct(
         TranslatorInterface $translator,
-        EngineInterface $templatingEngine,
+        Environment $twig,
         OrderRepositoryInterface $orderRepository,
         SenderInterface $mailer,
         RouterInterface $router,
@@ -64,7 +64,7 @@ class OrderMessageController
         RepositoryInterface $orderMessageRepository
     ) {
         $this->translator = $translator;
-        $this->templatingEngine = $templatingEngine;
+        $this->twig = $twig;
         $this->orderRepository = $orderRepository;
         $this->mailer = $mailer;
         $this->router = $router;
@@ -115,7 +115,7 @@ class OrderMessageController
             return new RedirectResponse($this->router->generate('sylius_admin_order_show', ['id' => $orderId]));
         }
 
-        return new Response($this->templatingEngine->render('@MangoSyliusOrderCommentsPlugin/Admin/Form/_form.html.twig', [
+        return new Response($this->twig->render('@MangoSyliusOrderCommentsPlugin/Admin/Form/_form.html.twig', [
             'form' => $form->createView(),
         ]));
     }
@@ -124,7 +124,7 @@ class OrderMessageController
     {
         $orderMessages = $this->orderMessageRepository->findBy(['order' => $orderId]);
 
-        return new Response($this->templatingEngine->render('@MangoSyliusOrderCommentsPlugin/Admin/_show.html.twig', [
+        return new Response($this->twig->render('@MangoSyliusOrderCommentsPlugin/Admin/_show.html.twig', [
             'messages' => $orderMessages,
         ]));
     }
