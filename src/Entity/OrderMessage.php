@@ -25,7 +25,7 @@ class OrderMessage implements OrderMessageInterface
     protected $id;
 
     /**
-     * @ORM\Column(type="string", nullable=false)
+     * @ORM\Column(type="text", length=65535, nullable=false)
      *
      * @var string|null
      * @Assert\NotBlank
