@@ -18,7 +18,7 @@ services:
             $flashBag: '@session.flash_bag'
             $translator: '@translator'
             $mailer: '@sylius.email_sender'
-            $templatingEngine: '@templating'
+            $twig: '@twig'
             $builder: '@form.factory'
             $tokenStorage: '@security.token_storage'
             $orderRepository: '@sylius.repository.order'
